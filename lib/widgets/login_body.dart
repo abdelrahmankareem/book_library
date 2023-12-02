@@ -9,8 +9,7 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+    return ListView(
       children: [
         const SizedBox(
           height: 75,
@@ -22,9 +21,11 @@ class LoginBody extends StatelessWidget {
         const SizedBox(
           height: 50,
         ),
-        const Text(
-          "Sign In",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        const Center(
+          child: Text(
+            "Sign In",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
         ),
         const SizedBox(
           height: 60,
@@ -42,7 +43,28 @@ class LoginBody extends StatelessWidget {
         ),
         const CustomButton(
           text: "Sign in",
-        )
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Don\'t have an account?',
+              style: TextStyle(
+                color: Color(0xff2d0c92),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: const Text(
+                '  Register',
+                style: TextStyle(color: Color(0xff2d0c92)),
+              ),
+            )
+          ],
+        ),
       ],
     );
   }
