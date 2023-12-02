@@ -14,15 +14,17 @@ class CustomTextFormField extends StatelessWidget {
           labelStyle: const TextStyle(color: Colors.black),
           labelText: label,
           hintText: hint,
-          hintStyle: const TextStyle(color: Colors.blue),
+          hintStyle:
+              const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
           border: const OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.blue,
             ),
           ),
           enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
             borderSide: BorderSide(
-              color: Colors.blue,
+              color: Colors.black,
             ),
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:book/widgets/custom_button.dart';
 import 'package:book/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -16,14 +17,17 @@ class LoginBody extends StatelessWidget {
         ),
         SizedBox(
           height: 200,
-          child: Image.asset("lib/assets/download (1).jpg"),
+          child: Image.asset("lib/assets/book photo.png"),
+        ),
+        const SizedBox(
+          height: 50,
         ),
         const Text(
           "Sign In",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         const SizedBox(
-          height: 24,
+          height: 60,
         ),
         const CustomTextFormField(
           label: "Email adress",
@@ -32,7 +36,13 @@ class LoginBody extends StatelessWidget {
         const SizedBox(
           height: 24,
         ),
-        const CustomTextFormField(label: "password", hint: "........")
+        const CustomTextFormField(label: "password", hint: "••••••••••••••••"),
+        const SizedBox(
+          height: 24,
+        ),
+        const CustomButton(
+          text: "Sign in",
+        )
       ],
     );
   }
