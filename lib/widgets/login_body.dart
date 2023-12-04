@@ -1,3 +1,4 @@
+import 'package:book/core/utils/assets.dart';
 import 'package:book/widgets/custom_button.dart';
 import 'package:book/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class LoginBody extends StatelessWidget {
         ),
         SizedBox(
           height: 200,
-          child: Image.asset("lib/assets/book photo.png"),
+          child: Image.asset(AssetsData.logo),
         ),
         const SizedBox(
           height: 50,
