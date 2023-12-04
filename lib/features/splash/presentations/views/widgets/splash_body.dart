@@ -9,7 +9,14 @@ class SplashBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [Image.asset(AssetsData.logo)],
+      children: [
+        Image.asset(AssetsData.logo),
+        const Text(
+          "Welcome To your Dreams",
+          style: TextStyle(fontSize: 18),
+          textAlign: TextAlign.center,
+        )
+      ],
     );
   }
 }
