@@ -31,13 +31,13 @@ class LoginBody extends StatelessWidget {
           height: 60,
         ),
         const CustomTextFormField(
-          label: "Email adress",
+          label: "E-mail",
           hint: "Write your Email",
         ),
         const SizedBox(
           height: 24,
         ),
-        const CustomTextFormField(label: "password", hint: "••••••••••••••••"),
+        const CustomTextFormField(label: "Password", hint: "••••••••••••••••"),
         const SizedBox(
           height: 24,
         ),
