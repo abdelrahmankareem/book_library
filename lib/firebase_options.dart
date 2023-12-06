@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAZsDO9Z3slkRIz4cscBdOfHyMKmC0xpZY',
-    appId: '1:543208286675:web:68475b7b8ae02207a5e726',
-    messagingSenderId: '543208286675',
-    projectId: 'chat-app-ba847',
-    authDomain: 'chat-app-ba847.firebaseapp.com',
-    storageBucket: 'chat-app-ba847.appspot.com',
-    measurementId: 'G-QGS0HZJ7YL',
+    apiKey: 'AIzaSyC4xyys1pEy-ApVyFdwOkMBhAOOlACTRLk',
+    appId: '1:493998980701:web:0deea892739209835a97b4',
+    messagingSenderId: '493998980701',
+    projectId: 'book-7a41c',
+    authDomain: 'book-7a41c.firebaseapp.com',
+    storageBucket: 'book-7a41c.appspot.com',
+    measurementId: 'G-1CSWE45S4V',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCHZ9SRHNc38MGhgiS_wOHabEVdIihO6vE',
-    appId: '1:543208286675:android:e1319b37771b417ba5e726',
-    messagingSenderId: '543208286675',
-    projectId: 'chat-app-ba847',
-    storageBucket: 'chat-app-ba847.appspot.com',
+    apiKey: 'AIzaSyAfCo2fQQ5pAg12QD7-UbIrpplMZ12mu3k',
+    appId: '1:493998980701:android:c73dc307fcaaa93c5a97b4',
+    messagingSenderId: '493998980701',
+    projectId: 'book-7a41c',
+    storageBucket: 'book-7a41c.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCdmbtYlnAs20eRf_KJEQ_NsWdjhx2YOpc',
-    appId: '1:543208286675:ios:92711948e60c1a2ba5e726',
-    messagingSenderId: '543208286675',
-    projectId: 'chat-app-ba847',
-    storageBucket: 'chat-app-ba847.appspot.com',
+    apiKey: 'AIzaSyAo9ws0KDgQCzAikzi7z434lOvPPJTc5nw',
+    appId: '1:493998980701:ios:e48793b5603368b05a97b4',
+    messagingSenderId: '493998980701',
+    projectId: 'book-7a41c',
+    storageBucket: 'book-7a41c.appspot.com',
     iosBundleId: 'com.example.book',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCdmbtYlnAs20eRf_KJEQ_NsWdjhx2YOpc',
-    appId: '1:543208286675:ios:bc24e458b6352221a5e726',
-    messagingSenderId: '543208286675',
-    projectId: 'chat-app-ba847',
-    storageBucket: 'chat-app-ba847.appspot.com',
+    apiKey: 'AIzaSyAo9ws0KDgQCzAikzi7z434lOvPPJTc5nw',
+    appId: '1:493998980701:ios:b3278a0a587b17775a97b4',
+    messagingSenderId: '493998980701',
+    projectId: 'book-7a41c',
+    storageBucket: 'book-7a41c.appspot.com',
     iosBundleId: 'com.example.book.RunnerTests',
   );
 }
