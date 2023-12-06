@@ -1,6 +1,9 @@
+import 'package:book/core/utils/app_router.dart';
 import 'package:book/core/utils/assets.dart';
+
 import 'package:book/features/splash/presentations/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
@@ -16,17 +19,14 @@ class _SplashBodyState extends State<SplashBody>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
-            .animate(animationController);
-    animationController.forward();
+    initSlidingAnimation();
+    Future.delayed(const Duration(seconds: 3), () {
+      GoRouter.of(context).push(AppRouter.kLoginView);
+    });
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     animationController.dispose();
   }
@@ -41,5 +41,14 @@ class _SplashBodyState extends State<SplashBody>
         SlidingText(slidingAnimation: slidingAnimation)
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
   }
 }

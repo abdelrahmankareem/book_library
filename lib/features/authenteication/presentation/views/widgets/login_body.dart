@@ -1,7 +1,9 @@
+import 'package:book/core/utils/app_router.dart';
 import 'package:book/core/utils/assets.dart';
-import 'package:book/widgets/custom_button.dart';
-import 'package:book/widgets/custom_textfield.dart';
+import 'package:book/features/authenteication/presentation/views/widgets/custom_button.dart';
+import 'package:book/features/authenteication/presentation/views/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({
@@ -58,7 +60,9 @@ class LoginBody extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kRegisterView);
+              },
               child: const Text(
                 '  Register',
                 style: TextStyle(color: Color(0xff2d0c92)),

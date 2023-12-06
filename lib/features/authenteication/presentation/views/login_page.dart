@@ -1,8 +1,7 @@
-import 'package:book/widgets/login_body.dart';
+import 'package:book/features/authenteication/presentation/views/widgets/login_body.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  static String id = "LoginPage";
   const LoginPage({super.key});
 
   @override
