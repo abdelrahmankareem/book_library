@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
-      {super.key, required this.hint, required this.label});
+      {super.key, required this.hint, required this.label, this.onChanged});
   final String? hint;
   final String? label;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: TextFormField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           labelStyle: const TextStyle(color: Colors.black),
           labelText: label,
