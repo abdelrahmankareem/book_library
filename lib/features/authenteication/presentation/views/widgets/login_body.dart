@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+// ignore: must_be_immutable
 class LoginBody extends StatelessWidget {
   LoginBody({
     super.key,
@@ -17,6 +18,7 @@ class LoginBody extends StatelessWidget {
   String? email;
   String? password;
   bool isloading = false;
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
@@ -34,77 +36,82 @@ class LoginBody extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: isloading,
-          child: ListView(
-            children: [
-              const SizedBox(
-                height: 75,
-              ),
-              SizedBox(
-                height: 200,
-                child: Image.asset(AssetsData.logo),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const Center(
-                child: Text(
-                  "Sign In",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              children: [
+                const SizedBox(
+                  height: 75,
                 ),
-              ),
-              const SizedBox(
-                height: 60,
-              ),
-              CustomTextFormField(
-                onChanged: (data) {
-                  email = data;
-                },
-                label: "E-mail",
-                hint: "Write your Email",
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              CustomTextFormField(
-                  onChanged: (data) {
-                    password = data;
-                  },
-                  label: "Password",
-                  hint: "••••••••••••••••"),
-              const SizedBox(
-                height: 24,
-              ),
-              CustomButton(
-                onTap: () {
-                  BlocProvider.of<AuthCubit>(context)
-                      .LoginUser(email: email!, password: password!);
-                },
-                text: "Sign in",
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Don\'t have an account?',
-                    style: TextStyle(
-                      color: Color(0xff2d0c92),
-                    ),
+                SizedBox(
+                  height: 200,
+                  child: Image.asset(AssetsData.logo),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                const Center(
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).push(AppRouter.kRegisterView);
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                CustomTextFormField(
+                  onChanged: (data) {
+                    email = data;
+                  },
+                  label: "E-mail",
+                  hint: "Write your Email",
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                CustomTextFormField(
+                    onChanged: (data) {
+                      email = data;
                     },
-                    child: const Text(
-                      '  Register',
-                      style: TextStyle(color: Color(0xff2d0c92)),
+                    label: "Password",
+                    hint: "••••••••••••••••"),
+                const SizedBox(
+                  height: 24,
+                ),
+                CustomButton(
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      BlocProvider.of<AuthCubit>(context)
+                          .LoginUser(email: email!, password: password!);
+                    }
+                  },
+                  text: "Sign in",
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Don\'t have an account?',
+                      style: TextStyle(
+                        color: Color(0xff2d0c92),
+                      ),
                     ),
-                  )
-                ],
-              ),
-            ],
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context).push(AppRouter.kRegisterView);
+                      },
+                      child: const Text(
+                        '  Register',
+                        style: TextStyle(color: Color(0xff2d0c92)),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         );
       },

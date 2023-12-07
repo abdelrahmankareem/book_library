@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+// ignore: must_be_immutable
 class RegisterBody extends StatelessWidget {
   RegisterBody({
     super.key,
@@ -16,6 +17,7 @@ class RegisterBody extends StatelessWidget {
   String? email;
   String? password;
   bool isLoading = false;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -34,54 +36,59 @@ class RegisterBody extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: isLoading,
-          child: ListView(children: [
-            const SizedBox(
-              height: 75,
-            ),
-            SizedBox(
-              height: 200,
-              child: Image.asset(AssetsData.logo),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            const Center(
-              child: Text(
-                "Sign In",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          child: Form(
+            key: _formKey,
+            child: ListView(children: [
+              const SizedBox(
+                height: 75,
               ),
-            ),
-            const SizedBox(
-              height: 60,
-            ),
-            CustomTextFormField(
-              onChanged: (data) {
-                email = data;
-              },
-              label: "E-mail",
-              hint: "Write your Email",
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            CustomTextFormField(
+              SizedBox(
+                height: 200,
+                child: Image.asset(AssetsData.logo),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              const Center(
+                child: Text(
+                  "Sign In",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(
+                height: 60,
+              ),
+              CustomTextFormField(
                 onChanged: (data) {
-                  password = data;
+                  email = data;
                 },
-                label: "Password",
-                hint: "••••••••••••••••"),
-            const SizedBox(
-              height: 24,
-            ),
-            CustomButton(
-              onTap: () {
-                BlocProvider.of<AuthCubit>(context)
-                    .registeruser(email: email!, password: password!);
-                GoRouter.of(context).pop();
-              },
-              text: "Register",
-            )
-          ]),
+                label: "E-mail",
+                hint: "Write your Email",
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              CustomTextFormField(
+                  onChanged: (data) {
+                    password = data;
+                  },
+                  label: "Password",
+                  hint: "••••••••••••••••"),
+              const SizedBox(
+                height: 24,
+              ),
+              CustomButton(
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    BlocProvider.of<AuthCubit>(context)
+                        .registeruser(email: email!, password: password!);
+                  }
+                  GoRouter.of(context).pop();
+                },
+                text: "Register",
+              )
+            ]),
+          ),
         );
       },
     );
