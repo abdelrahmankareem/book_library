@@ -24,7 +24,7 @@ class RegisterBody extends StatelessWidget {
         if (state is Registerloading) {
           isLoading = true;
         } else if (state is RegisterSucces) {
-          Navigator.pop(context);
+          GoRouter.of(context).pop();
           isLoading = false;
         } else if (state is RegisterFailure) {
           showsnackbar(context, state.errmessage);
