@@ -59,6 +59,7 @@ class RegisterBody extends StatelessWidget {
                 height: 60,
               ),
               CustomTextFormField(
+                obsecure: false,
                 onChanged: (data) {
                   email = data;
                 },
@@ -69,6 +70,7 @@ class RegisterBody extends StatelessWidget {
                 height: 24,
               ),
               CustomTextFormField(
+                  obsecure: true,
                   onChanged: (data) {
                     password = data;
                   },

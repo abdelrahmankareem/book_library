@@ -60,6 +60,7 @@ class LoginBody extends StatelessWidget {
                   height: 60,
                 ),
                 CustomTextFormField(
+                  obsecure: false,
                   onChanged: (data) {
                     email = data;
                   },
@@ -70,8 +71,9 @@ class LoginBody extends StatelessWidget {
                   height: 24,
                 ),
                 CustomTextFormField(
+                    obsecure: true,
                     onChanged: (data) {
-                      email = data;
+                      password = data;
                     },
                     label: "Password",
                     hint: "••••••••••••••••"),

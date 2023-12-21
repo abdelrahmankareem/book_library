@@ -20,9 +20,7 @@ class _SplashBodyState extends State<SplashBody>
   void initState() {
     super.initState();
     initSlidingAnimation();
-    Future.delayed(const Duration(seconds: 3), () {
-      GoRouter.of(context).push(AppRouter.kLoginView);
-    });
+    NavigateToLogin();
   }
 
   @override
@@ -50,5 +48,11 @@ class _SplashBodyState extends State<SplashBody>
         Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
+  }
+
+  void NavigateToLogin() {
+    Future.delayed(const Duration(seconds: 3), () {
+      GoRouter.of(context).push(AppRouter.kLoginView);
+    });
   }
 }
