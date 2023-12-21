@@ -1,5 +1,5 @@
-import 'package:book/features/home/presentations/views/widget/custom_list_item.dart';
-import 'package:book/features/home/presentations/views/widget/custom_search_dield.dart';
+import 'package:book/features/home/presentations/views/widget/custom_search_field.dart';
+import 'package:book/features/home/presentations/views/widget/featured_book_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -10,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomSearchField(),
-        CustomListItem(),
+        FeaturedListBoxView(),
       ],
     );
   }
