@@ -6,9 +6,13 @@ class CustomSearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(24),
+      padding: EdgeInsets.only(
+        top: 16,
+        right: 16,
+      ),
       child: TextField(
           decoration: InputDecoration(
+        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
         prefixIcon: Icon(Icons.search, color: Colors.grey),
         hintText: "Search your books",
         hintStyle: TextStyle(
