@@ -1,8 +1,8 @@
 import 'package:book/features/home/presentations/views/widget/custom_list_item.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedListBoxView extends StatelessWidget {
-  const FeaturedListBoxView({super.key});
+class FeaturedListBooksView extends StatelessWidget {
+  const FeaturedListBooksView({super.key});
 
   @override
   Widget build(BuildContext context) {
