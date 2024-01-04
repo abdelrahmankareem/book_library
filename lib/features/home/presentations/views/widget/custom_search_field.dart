@@ -7,6 +7,7 @@ class CustomSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.only(
+        left: 16,
         top: 16,
         right: 16,
       ),
