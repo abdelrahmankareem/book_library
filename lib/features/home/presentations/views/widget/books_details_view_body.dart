@@ -1,3 +1,5 @@
+import 'package:book/core/utils/styles.dart';
+import 'package:book/features/home/presentations/views/widget/book_rating.dart';
 import 'package:book/features/home/presentations/views/widget/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +12,30 @@ class BooksDetailsViewBody extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * .2),
+          padding: EdgeInsets.symmetric(horizontal: width * .25),
           child: const CustomBookImage(),
-        )
+        ),
+        const SizedBox(
+          height: 43,
+        ),
+        const Text(
+          "The Jungle Book",
+          style: Styles.textStyle30,
+        ),
+        const SizedBox(
+          height: 6,
+        ),
+        Opacity(
+          opacity: .7,
+          child: Text(
+            "abdo kareem",
+            style: Styles.textStyle18.copyWith(
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        const BookRating()
       ],
     );
   }
