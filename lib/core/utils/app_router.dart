@@ -1,13 +1,15 @@
 import 'package:book/features/authenteication/presentation/views/login_page.dart';
 import 'package:book/features/authenteication/presentation/views/register_page.dart';
+import 'package:book/features/home/presentations/views/book_details_view.dart';
 import 'package:book/features/home/presentations/views/home_view.dart';
 import 'package:book/features/splash/presentations/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const kRegisterView = '/RegisterView';
-  static const kLoginView = '/LoginView';
-  static const kHomeview = '/HomeView';
+  static const kRegisterView = '/registerView';
+  static const kLoginView = '/loginView';
+  static const kHomeview = '/homeView';
+  static const kBookDetailsView = '/bookDetailsView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -25,6 +27,10 @@ abstract class AppRouter {
       GoRoute(
         path: kHomeview,
         builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: kBookDetailsView,
+        builder: (context, state) => const BookDetailsView(),
       ),
     ],
   );

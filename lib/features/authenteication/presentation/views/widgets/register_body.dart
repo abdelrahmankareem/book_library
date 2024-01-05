@@ -11,16 +11,16 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 // ignore: must_be_immutable
 class RegisterBody extends StatelessWidget {
-  RegisterBody({
+  const RegisterBody({
     super.key,
   });
-  String? email;
-  String? password;
-  bool isLoading = false;
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    String? email;
+    String? password;
+    bool isLoading = false;
+    final formKey = GlobalKey<FormState>();
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is Registerloading) {
@@ -37,7 +37,7 @@ class RegisterBody extends StatelessWidget {
         return ModalProgressHUD(
           inAsyncCall: isLoading,
           child: Form(
-            key: _formKey,
+            key: formKey,
             child: ListView(children: [
               const SizedBox(
                 height: 75,
@@ -81,7 +81,7 @@ class RegisterBody extends StatelessWidget {
               ),
               CustomButton(
                 onTap: () {
-                  if (_formKey.currentState!.validate()) {
+                  if (formKey.currentState!.validate()) {
                     BlocProvider.of<AuthCubit>(context)
                         .registeruser(email: email!, password: password!);
                   }

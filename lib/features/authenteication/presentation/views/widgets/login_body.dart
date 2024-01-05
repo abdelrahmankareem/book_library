@@ -12,15 +12,16 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 // ignore: must_be_immutable
 class LoginBody extends StatelessWidget {
-  LoginBody({
+  const LoginBody({
     super.key,
   });
-  String? email;
-  String? password;
-  bool isloading = false;
-  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+    String? email;
+    String? password;
+    bool isloading = false;
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is LoginLoding) {
@@ -37,7 +38,7 @@ class LoginBody extends StatelessWidget {
         return ModalProgressHUD(
           inAsyncCall: isloading,
           child: Form(
-            key: _formKey,
+            key: formKey,
             child: ListView(
               children: [
                 const SizedBox(
@@ -82,7 +83,7 @@ class LoginBody extends StatelessWidget {
                 ),
                 CustomButton(
                   onTap: () {
-                    if (_formKey.currentState!.validate()) {
+                    if (formKey.currentState!.validate()) {
                       BlocProvider.of<AuthCubit>(context)
                           .LoginUser(email: email!, password: password!);
                     }
