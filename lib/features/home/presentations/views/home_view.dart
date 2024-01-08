@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
             padding: EdgeInsets.only(right: 16),
             child: Icon(
               FontAwesomeIcons.robot,
-              color: Colors.blue,
+              color: Color(0xff2d0c92),
               size: 24,
             ),
           )

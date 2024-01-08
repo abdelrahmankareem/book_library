@@ -13,9 +13,11 @@ class BookDetailsView extends StatelessWidget {
       appBar: AppBar(
         actions: const [
           Padding(
-            padding: EdgeInsets.only(right: 16.0),
-            child: Icon(FontAwesomeIcons.robot, color: Color(0xff2d0c92)),
-          )
+              padding: EdgeInsets.only(right: 16.0),
+              child: Icon(
+                FontAwesomeIcons.robot,
+                color: Color(0xff2d0c92),
+              ))
         ],
         leading: IconButton(
             onPressed: () {
