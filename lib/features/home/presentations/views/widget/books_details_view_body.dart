@@ -1,4 +1,4 @@
-import 'package:book/features/home/presentations/views/widget/books_details_Section.dart';
+import 'package:book/features/home/presentations/views/widget/books_details_section.dart';
 
 import 'package:book/features/home/presentations/views/widget/similar_books_section.dart';
 

@@ -1,37 +1,48 @@
 import 'package:flutter/material.dart';
 
 class CustomSearchField extends StatelessWidget {
-  const CustomSearchField({super.key});
+  const CustomSearchField({super.key, this.onTap, this.onPressed});
+  final void Function()? onTap;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(
+    return Padding(
+      padding: const EdgeInsets.only(
         left: 16,
         top: 16,
         right: 16,
       ),
       child: TextField(
-          decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-        prefixIcon: Icon(Icons.search, color: Colors.grey),
-        hintText: "Search your books",
-        hintStyle: TextStyle(
-          color: Colors.black,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-          borderSide: BorderSide(
-            color: Colors.grey,
+        onTap: onTap,
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+          prefixIcon: IconButton(
+            onPressed: onPressed,
+            icon: const Icon(Icons.search, color: Colors.grey),
+          ),
+          hintText: "Search your books",
+          hintStyle: const TextStyle(
+            color: Colors.black,
+          ),
+          border: BuildOutlineInputBuilder(),
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            borderSide: BorderSide(
+              color: Colors.grey,
+            ),
           ),
         ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
-          borderSide: BorderSide(
-            color: Colors.grey,
-          ),
-        ),
-      )),
+      ),
+    );
+  }
+
+  OutlineInputBorder BuildOutlineInputBuilder() {
+    return const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(8)),
+      borderSide: BorderSide(
+        color: Colors.grey,
+      ),
     );
   }
 }
