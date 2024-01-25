@@ -1,5 +1,5 @@
 import 'package:book/core/utils/app_router.dart';
-import 'package:book/features/authenteication/data/auth_cubit/authcubit.dart';
+import 'package:book/features/authenteication/presentation/manager/auth_cubit/authcubit.dart';
 import 'package:book/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 

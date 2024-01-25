@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:book/features/authenteication/data/auth_cubit/authstate.dart';
+import 'package:book/features/authenteication/presentation/manager/auth_cubit/authstate.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 

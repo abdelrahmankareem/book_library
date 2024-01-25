@@ -1,6 +1,6 @@
 import 'package:book/core/utils/assets.dart';
-import 'package:book/features/authenteication/data/auth_cubit/authcubit.dart';
-import 'package:book/features/authenteication/data/auth_cubit/authstate.dart';
+import 'package:book/features/authenteication/presentation/manager/auth_cubit/authcubit.dart';
+import 'package:book/features/authenteication/presentation/manager/auth_cubit/authstate.dart';
 import 'package:book/features/authenteication/presentation/views/widgets/custom_button.dart';
 import 'package:book/features/authenteication/presentation/views/widgets/custom_textfield.dart';
 import 'package:book/features/authenteication/presentation/views/widgets/show_snack_par.dart';
@@ -51,7 +51,7 @@ class RegisterBody extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  "Sign In",
+                  "Register",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
