@@ -6,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
-  Future<void> LoginUser(
+  Future<void> loginUser(
       {required String email, required String password}) async {
     emit(LoginLoding());
     try {

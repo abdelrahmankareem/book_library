@@ -85,7 +85,7 @@ class LoginBody extends StatelessWidget {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       BlocProvider.of<AuthCubit>(context)
-                          .LoginUser(email: email!, password: password!);
+                          .loginUser(email: email!, password: password!);
                     }
                   },
                   text: "Sign in",

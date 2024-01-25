@@ -18,7 +18,7 @@ final class BestSellerSuccess extends BestSellerState {
 final class BestSellerFailure extends BestSellerState {
   final String errMessage;
 
-  BestSellerFailure(this.errMessage);
+  const BestSellerFailure(this.errMessage);
 }
 
 final class BestSellerLoading extends BestSellerState {}
