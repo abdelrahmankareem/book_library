@@ -21,4 +21,4 @@ final class FeaturedBooksFailure extends FeaturedBooksState {
   const FeaturedBooksFailure(this.errMessage);
 }
 
-final class FeaturedBooksLOading extends FeaturedBooksState {}
+final class FeaturedBooksLoading extends FeaturedBooksState {}
