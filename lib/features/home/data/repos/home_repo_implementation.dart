@@ -6,43 +6,61 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
-  final ApiService apiservice;
+  final ApiService apiService;
 
-  HomeRepoImpl({required this.apiservice});
+  HomeRepoImpl(this.apiService);
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
-      var data = await apiservice.get(
+      var data = await apiService.get(
           endPoint:
               "volumes?Filtering=free-ebooks&Sorting=newest &q=computer science");
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
       }
+
       return right(books);
     } catch (e) {
       if (e is DioException) {
-        return left(ServerFailure.fromDioError(e));
+        return left(
+          ServerFailure.fromDioError(e),
+        );
       }
-      return left(ServerFailure(e.toString()));
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data = await apiservice.get(
-          endPoint: "volumes?Filtering=free-ebooks&q=subject:Programming");
+      var data = await apiService.get(
+          endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
       }
+
       return right(books);
     } catch (e) {
-      if (e is DioException) {
-        return left(ServerFailure.fromDioError(e));
+      if (e is DioError) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
       }
-      return left(ServerFailure(e.toString()));
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 }

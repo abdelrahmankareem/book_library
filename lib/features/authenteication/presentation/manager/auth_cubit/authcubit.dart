@@ -19,7 +19,7 @@ class AuthCubit extends Cubit<AuthState> {
       } else if (ex.code == 'wrong-password') {
         emit(LoginFailure(errMessage: ' Wrong passwor'));
       }
-    } catch (e) {
+    } catch (ex) {
       emit(LoginFailure(errMessage: 'Something went Wrong'));
     }
   }

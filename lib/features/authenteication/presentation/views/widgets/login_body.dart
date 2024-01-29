@@ -4,7 +4,7 @@ import 'package:book/features/authenteication/presentation/manager/auth_cubit/au
 import 'package:book/features/authenteication/presentation/manager/auth_cubit/authstate.dart';
 import 'package:book/features/authenteication/presentation/views/widgets/custom_button.dart';
 import 'package:book/features/authenteication/presentation/views/widgets/custom_textfield.dart';
-import 'package:book/features/authenteication/presentation/views/widgets/show_snack_par.dart';
+import 'package:book/core/widgets/custom_error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

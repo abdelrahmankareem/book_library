@@ -10,9 +10,12 @@ class BestSellerSection extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(children: [
-        Text(
-          "Best Seller",
-          style: Styles.textStyle18,
+        Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "Best Seller",
+            style: Styles.textStyle18,
+          ),
         ),
         SizedBox(
           height: 20,
