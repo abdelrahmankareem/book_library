@@ -1,4 +1,3 @@
-import 'package:book/core/utils/api_service.dart';
 import 'package:book/core/utils/app_router.dart';
 import 'package:book/core/utils/service_locator.dart';
 import 'package:book/features/authenteication/presentation/manager/auth_cubit/authcubit.dart';
@@ -6,7 +5,7 @@ import 'package:book/features/home/data/repos/home_repo_implementation.dart';
 import 'package:book/features/home/presentations/manager/Best_seller_cubit/best_seller_cubit.dart';
 import 'package:book/features/home/presentations/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:book/firebase_options.dart';
-import 'package:dio/dio.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
