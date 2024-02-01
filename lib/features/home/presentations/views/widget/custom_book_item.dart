@@ -1,3 +1,5 @@
+import 'package:book/core/widgets/custom_loading_indicator.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {
@@ -6,16 +8,17 @@ class CustomBookImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       shadowColor: Colors.black,
-      elevation: 15,
+      elevation: 8,
       child: AspectRatio(
         aspectRatio: 1 / 1.5,
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(urlImage),
-            ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            imageUrl: urlImage,
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
       ),
