@@ -25,7 +25,7 @@ class CustomSearchField extends StatelessWidget {
           hintStyle: const TextStyle(
             color: Colors.black,
           ),
-          border: BuildOutlineInputBuilder(),
+          border: buildOutlineInputBuilder(),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(16)),
             borderSide: BorderSide(
@@ -37,7 +37,7 @@ class CustomSearchField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder BuildOutlineInputBuilder() {
+  OutlineInputBorder buildOutlineInputBuilder() {
     return const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(8)),
       borderSide: BorderSide(
