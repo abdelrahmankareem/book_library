@@ -17,9 +17,9 @@ class BookDetailsView extends StatefulWidget {
 class _BookDetailsViewState extends State<BookDetailsView> {
   @override
   void initState() {
+    super.initState();
     BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
         category: widget.bookModel.volumeInfo.categories![0]);
-    // TODO: implement initState
   }
 
   @override
@@ -49,7 +49,9 @@ class _BookDetailsViewState extends State<BookDetailsView> {
               color: const Color(0xff2d0c92), fontWeight: FontWeight.bold),
         ),
       ),
-      body: const BooksDetailsViewBody(),
+      body: BooksDetailsViewBody(
+        bookModel: widget.bookModel,
+      ),
     );
   }
 }

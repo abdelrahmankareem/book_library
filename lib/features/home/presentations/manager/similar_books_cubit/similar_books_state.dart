@@ -10,7 +10,7 @@ abstract class SimilarBooksState extends Equatable {
 final class SimilarBooksInitial extends SimilarBooksState {}
 
 final class SimilarBooksSuccess extends SimilarBooksState {
-  final List books;
+  final List<BookModel> books;
 
   const SimilarBooksSuccess(this.books);
 }

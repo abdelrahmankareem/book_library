@@ -10,7 +10,7 @@ abstract class BestSellerState extends Equatable {
 final class BestSellerInitial extends BestSellerState {}
 
 final class BestSellerSuccess extends BestSellerState {
-  final List books;
+  final List<BookModel> books;
 
   const BestSellerSuccess(this.books);
 }

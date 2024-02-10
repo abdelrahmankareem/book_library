@@ -1,19 +1,21 @@
 import 'package:book/core/widgets/custom_button.dart';
+import 'package:book/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
-
+  const BooksAction({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
+          const Expanded(
             child: CustomActionButton(
-              text: "19.99€",
+              text: "Free",
               backgroundcolor: Colors.black,
               textcolor: Colors.white,
               borderRadius: BorderRadius.only(
@@ -24,11 +26,18 @@ class BooksAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomActionButton(
+              onPressed: () async {
+                final Uri url = Uri.parse(bookModel.volumeInfo.previewLink!);
+
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                }
+              },
               fontsize: 16,
               text: "Free preview",
-              backgroundcolor: Color(0xff2d0c92),
+              backgroundcolor: const Color(0xff2d0c92),
               textcolor: Colors.white,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(16),
                 bottomRight: Radius.circular(16),
               ),

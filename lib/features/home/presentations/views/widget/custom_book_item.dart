@@ -18,6 +18,7 @@ class CustomBookImage extends StatelessWidget {
             fit: BoxFit.fill,
             imageUrl: urlImage,
             errorWidget: (context, url, error) => const Icon(Icons.error),
+            placeholder: (context, url) => const Icon(Icons.error),
           ),
         ),
       ),
