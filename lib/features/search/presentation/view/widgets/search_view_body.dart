@@ -1,21 +1,24 @@
 import 'package:book/core/utils/styles.dart';
+
 import 'package:book/features/home/presentations/views/widget/custom_search_field.dart';
 import 'package:book/features/search/presentation/view/widgets/search_result_list_view.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
+  const SearchViewBody({super.key, required this.bookName});
+
+  final String bookName;
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomSearchField(),
-        SizedBox(
+        const CustomSearchField(),
+        const SizedBox(
           height: 16,
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 30),
           child: Text(
             "Search Results",
@@ -24,8 +27,8 @@ class SearchViewBody extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 30.0),
-            child: SearchResultListView(),
+            padding: const EdgeInsets.only(left: 30.0),
+            child: SearchResultListView(bookName: bookName),
           ),
         )
       ],

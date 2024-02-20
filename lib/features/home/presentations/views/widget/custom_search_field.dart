@@ -1,12 +1,17 @@
+import 'package:book/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
+import 'package:go_router/go_router.dart';
+
 class CustomSearchField extends StatelessWidget {
-  const CustomSearchField({super.key, this.onTap, this.onPressed});
-  final void Function()? onTap;
-  final void Function()? onPressed;
+  const CustomSearchField({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    String name;
+
     return Padding(
       padding: const EdgeInsets.only(
         left: 16,
@@ -14,12 +19,19 @@ class CustomSearchField extends StatelessWidget {
         right: 16,
       ),
       child: TextField(
-        onTap: onTap,
+        onChanged: (data) {
+          name = data;
+        },
+        onSubmitted: (data) {
+          name = data;
+
+          GoRouter.of(context).push(AppRouter.kSearchView, extra: name);
+        },
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
           prefixIcon: IconButton(
-            onPressed: onPressed,
             icon: const Icon(Icons.search, color: Colors.grey),
+            onPressed: () {},
           ),
           hintText: "Search your books",
           hintStyle: const TextStyle(

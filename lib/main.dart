@@ -4,6 +4,7 @@ import 'package:book/features/authenteication/presentation/manager/auth_cubit/au
 import 'package:book/features/home/data/repos/home_repo_implementation.dart';
 import 'package:book/features/home/presentations/manager/Best_seller_cubit/best_seller_cubit.dart';
 import 'package:book/features/home/presentations/manager/featured_books_cubit/featured_books_cubit.dart';
+
 import 'package:book/firebase_options.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -22,7 +23,9 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+  });
 
   // This widget is the root of your application.
   @override
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
           create: (context) => BestSellerCubit(
             getIt.get<HomeRepoImpl>(),
           )..fetchBestSellerBooks(),
-        )
+        ),
       ],
       child: MaterialApp.router(
         theme: ThemeData(textTheme: GoogleFonts.montserratTextTheme()),
