@@ -1,6 +1,5 @@
 import 'package:book/core/utils/styles.dart';
 
-import 'package:book/features/home/presentations/views/widget/custom_search_field.dart';
 import 'package:book/features/search/presentation/view/widgets/search_result_list_view.dart';
 import 'package:flutter/material.dart';
 

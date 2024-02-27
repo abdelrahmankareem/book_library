@@ -45,7 +45,7 @@ class _SearchViewState extends State<SearchView> {
             )),
         centerTitle: true,
         title: Text(
-          "Details",
+          "Your Results",
           style: Styles.textStyle16.copyWith(
               color: const Color(0xff2d0c92), fontWeight: FontWeight.bold),
         ),
